@@ -1,0 +1,127 @@
+//Arduino Code
+     
+const int EnableL = 5;
+const int HighL = 6;       // LEFT SIDE MOTOR
+const int LowL =7;
+
+const int EnableR = 10;
+const int HighR = 8;       //RIGHT SIDE MOTOR
+const int LowR =9;
+
+void setup() {
+
+pinMode(EnableL, OUTPUT);
+pinMode(HighL, OUTPUT);
+pinMode(LowL, OUTPUT);
+
+
+pinMode(EnableR, OUTPUT);
+pinMode(HighR, OUTPUT);
+pinMode(LowR, OUTPUT);
+
+}
+
+void Forward()
+{
+  digitalWrite(HighL, LOW);
+  digitalWrite(LowL, HIGH);
+  analogWrite(EnableL,140);
+
+  digitalWrite(HighR, LOW);
+  digitalWrite(LowR, HIGH);
+  analogWrite(EnableR,100);
+  
+}
+
+void RForward()
+{
+  digitalWrite(HighL, LOW);
+  digitalWrite(LowL, HIGH);
+  analogWrite(EnableL,160);
+
+  digitalWrite(HighR, LOW);
+  digitalWrite(LowR, HIGH);
+  analogWrite(EnableR,100);
+  
+}
+
+void Backward()
+{
+  digitalWrite(HighL, HIGH);
+  digitalWrite(LowL, LOW);
+  analogWrite(EnableL,140);
+
+  digitalWrite(HighR, HIGH);
+  digitalWrite(LowR, LOW);
+  analogWrite(EnableR,100);
+  
+}
+void Left()
+{
+  digitalWrite(HighL, HIGH);
+  digitalWrite(LowL, LOW);
+  analogWrite(EnableL,140);
+
+  digitalWrite(HighR, LOW);
+  digitalWrite(LowR, LOW);
+  analogWrite(EnableR,100);
+  
+}
+void RBackward()
+{
+  digitalWrite(HighL, HIGH);
+  digitalWrite(LowL, LOW);
+  analogWrite(EnableL,160);
+
+  digitalWrite(HighR, HIGH);
+  digitalWrite(LowR, LOW);
+  analogWrite(EnableR,100);
+  
+}
+
+
+void LBackward()
+{
+  digitalWrite(HighL, HIGH);
+  digitalWrite(LowL, LOW);
+  analogWrite(EnableL,120);
+
+  digitalWrite(HighR, HIGH);
+  digitalWrite(LowR, LOW);
+  analogWrite(EnableR,150);
+  
+}
+
+void LForward()
+{
+  digitalWrite(HighL, LOW);
+  digitalWrite(LowL, HIGH);
+  analogWrite(EnableL,120);
+
+  digitalWrite(HighR, LOW);
+  digitalWrite(LowR, HIGH);
+  analogWrite(EnableR,150);
+  
+}
+void loop()            
+{
+Backward();
+delay(2000);
+Forward();
+delay(2000);
+RBackward();
+delay(2000);
+RForward();
+delay(2000);
+LBackward();
+delay(2000);
+LForward();
+delay(2000);
+Backward();
+delay(2000);
+Forward();
+delay(2000);
+Left();
+delay(650);
+
+}
